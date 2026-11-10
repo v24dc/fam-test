@@ -20,7 +20,7 @@ final readonly class LoggerWrapper
     {
         // для локальной отладки
         // логи на windows пишем в каталог проекта
-        $logDirectory = PHP_OS_FAMILY === 'Windows' ? 'var/logs/' : '/var/logs/';
+        $logDirectory = PHP_OS_FAMILY === 'Windows' ? 'var/logs/' : '/var/logs/fam-test/';
         $this->logger = new Logger($loggerName ?? 'App');
         $rotatingFileHandler = new RotatingFileHandler($logDirectory . 'b24-php-sdk.log', 30, Level::Debug);
         $rotatingFileHandler->setFilenameFormat('{filename}-{date}', 'Y-m-d');
